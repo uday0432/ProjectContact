@@ -1,4 +1,3 @@
-package contact;
 
 import javax.swing.*;
 import java.awt.*;
