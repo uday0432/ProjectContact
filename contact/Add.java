@@ -1,0 +1,88 @@
+package contact;
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+import java.io.IOException;
+
+public class Add extends JFrame implements ActionListener{
+	private JLabel heading,name,num;
+	private JTextField username,number;
+	private JButton submit,back;
+	private JButton buttons[] = new JButton[2];
+	static String name1,number1;
+	Font f1 = new Font("Dialog",Font.BOLD,40);
+
+	public Add() {
+		Color col = new Color(255,153,0);
+		this.getContentPane().setBackground(Color.white);
+		this.setLayout(null);
+		
+		heading = new JLabel("ADD CONTACT");
+		heading.setFont(f1);
+		heading.setForeground(Color.RED);
+		heading.setBounds(280,30,400,50);
+		this.add(heading);
+		
+		name = new JLabel("Name: ");
+		name.setBounds(300,130,100,50);
+		name.setFont(new Font("Consolas",Font.ITALIC,25));
+		this.add(name);
+		
+		username = new JTextField();
+		username.setBounds(400,140,150,30);
+		this.add(username);
+		
+		num = new JLabel("Number:");
+		num.setBounds(280,190,100,50);
+		num.setFont(new Font("Consolas",Font.ITALIC,25));
+		this.add(num);
+		
+		number = new JTextField();
+		number.setBounds(400,200,150,30);
+		this.add(number);
+		
+		submit = new JButton("Submit");
+		submit.setBounds(250,350,130,30);
+		buttons[0]=submit;
+		
+		back = new JButton("Back");
+		back.setBounds(450,350,130,30);
+		buttons[1]=back;		
+		
+		for(int i=0;i<2;i++) {
+			buttons[i].setBackground(col);
+			buttons[i].setFont(new Font("Consolas",Font.BOLD,15));
+			buttons[i].setBorder(null);
+			buttons[i].setFocusable(false);
+			buttons[i].addActionListener(this);
+			add(buttons[i]);
+		}
+		
+		this.setSize(900,500);
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+	}
+	public void actionPerformed(ActionEvent ae) {
+		if(ae.getSource()==submit) {
+			name1 = username.getText();
+			number1 = number.getText();
+			//System.out.println(number1);
+			try {
+				new FileCreate();
+				JOptionPane.showMessageDialog(null,"Successfully Submitted");
+				this.setVisible(false);
+			} catch(IOException ioe) {
+				ioe.printStackTrace();
+			}
+		}
+		if(ae.getSource()==back) {
+			this.setVisible(false);
+			//Home page
+		}
+	}
+	
+	public static void main(String[] args) {
+		new Add();
+	}
+}
