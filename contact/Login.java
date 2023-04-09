@@ -12,8 +12,8 @@ public class Login extends JFrame implements ActionListener{
 		
 		JLabel heading=new JLabel("ACCOUNT_LOGIN");
 		setLayout(null);
-		heading.setBounds(230,10,300,100);
-		heading.setFont(new Font("Times New Roman",Font.BOLD,25));
+		heading.setBounds(200,10,500,100);
+		heading.setFont(new Font("Times New Roman",Font.BOLD,35));
 		heading.setForeground(Color.WHITE);
 		add(heading);
 		
@@ -38,24 +38,24 @@ public class Login extends JFrame implements ActionListener{
 		add(passw);
 		
 		Login=new JButton("LOGIN");
-		Login.setBounds(500,500,70,30);
+		Login.setBounds(500,500,100,30); //length changed
 		Login.setBackground(Color.ORANGE);
 		Login.setForeground(Color.BLACK);
+		Login.setFocusable(false); //Added
 		Login.addActionListener(this);
 		add(Login);
 		
 	    exit=new JButton("EXIT");
-		exit.setBounds(50,500,70,30);
+		exit.setBounds(50,500,100,30);//Length Changed
 		exit.setBackground(Color.ORANGE);
 		exit.setForeground(Color.BLACK);
+		exit.setFocusable(false);     //Added
 		exit.addActionListener(this);
 		add(exit);
 		
-		
-		
-		setVisible(true);
 		setSize(700,700);
-		setLocation(300,50);
+		setLocationRelativeTo(null); //Changed
+		setVisible(true);
 		getContentPane().setBackground(Color.BLUE);
 		
 	}

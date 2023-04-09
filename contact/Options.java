@@ -5,7 +5,6 @@ import javax.swing.*;
 import java.awt.event.*;
 //import java.io.IOException.*;
 
-
 public class Options extends JFrame implements ActionListener  {
 	JButton add;
 	JButton update;
@@ -13,7 +12,8 @@ public class Options extends JFrame implements ActionListener  {
 	JButton delete;
 	Options(){
 		JLabel heading = new JLabel("CONTACTS");
-		//setLayout(null);
+		setLayout(null);
+		
 		heading.setBounds(50,50,300,50);
 		heading.setFont(new Font("Cooper",Font.BOLD,26));
 		heading.setForeground(Color.BLUE);
@@ -43,37 +43,34 @@ public class Options extends JFrame implements ActionListener  {
 		add(delete);
 		
 		getContentPane().setBackground(Color.WHITE);
-		setLayout(null);
+		//setLayout(null);
 		setSize(1100,600);
 		setLocation(200, 120);
 		setVisible(true);
 		
 	}
 	public void actionPerformed(ActionEvent ae) {
-		//setVisible(false);
+
 		if (ae.getSource()== add) {
-			this.setVisible(false);
 			try {
-				new Add();
 				this.setVisible(false);
-			}catch(Exception ioe) {
-				ioe.printStackTrace();
+				new Add();
+			}catch(Exception e) {
+				e.printStackTrace();
 			}
 		}
-		else if (ae.getSource()== update) {
+		if (ae.getSource()== update) {
 			this.setVisible(false);
+			//Update Class Constructor
 		}
-		else if (ae.getSource()== view) {
+		if (ae.getSource()== view) {
 			this.setVisible(false);
+			//Update Class Constructor
 		}
-		else if (ae.getSource()== delete) {
+		if (ae.getSource()== delete) {
 			this.setVisible(false);
+			//Update Class Constructor
 		}
-		else {
-			setVisible(true);
-		}
-		
-			
 		}
 	public static void main(String[] args) {
 		new Options();
