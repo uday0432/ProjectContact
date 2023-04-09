@@ -3,7 +3,7 @@ package contact;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-//import java.io.IOException.*;
+import java.io.IOException.*;
 
 public class Options extends JFrame implements ActionListener  {
 	JButton add;
