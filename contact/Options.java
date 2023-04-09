@@ -1,3 +1,5 @@
+package contact;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -74,7 +76,7 @@ public class Options extends JFrame implements ActionListener  {
 			
 		}
 	public static void main(String[] args) {
-		Options op = new Options();
+		new Options();
 		
 	}
 }
