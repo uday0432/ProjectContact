@@ -14,7 +14,7 @@ public class Login extends JFrame implements ActionListener{
 		setLayout(null);
 		heading.setBounds(200,10,500,100);
 		heading.setFont(new Font("Times New Roman",Font.BOLD,35));
-		heading.setForeground(Color.WHITE);
+		heading.setForeground(Color.green);
 		add(heading);
 		
 		JLabel uname=new JLabel("USER_NAME");
@@ -25,6 +25,7 @@ public class Login extends JFrame implements ActionListener{
 		
 		username=new JTextField();
 		username.setBounds(30,200,400,30);
+		username.setBorder(null);
 		add(username);
 		
 		JLabel password=new JLabel("PASSWORD");
@@ -35,6 +36,7 @@ public class Login extends JFrame implements ActionListener{
 		
 		passw=new JTextField();
 		passw.setBounds(30,300,400,30);
+		passw.setBorder(null);
 		add(passw);
 		
 		Login=new JButton("LOGIN");

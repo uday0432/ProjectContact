@@ -78,7 +78,7 @@ public class Add extends JFrame implements ActionListener{
 		}
 		if(ae.getSource()==back) {
 			this.setVisible(false);
-			//Home page
+			new Options();
 		}
 	}
 	

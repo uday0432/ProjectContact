@@ -64,11 +64,11 @@ public class Options extends JFrame implements ActionListener  {
 		}
 		if (ae.getSource()== view) {
 			this.setVisible(false);
-			//Update Class Constructor
+			//View Class Constructor
 		}
 		if (ae.getSource()== delete) {
 			this.setVisible(false);
-			//Update Class Constructor
+			new Delete();
 		}
 		}
 	public static void main(String[] args) {
