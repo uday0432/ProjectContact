@@ -6,12 +6,12 @@ import java.io.IOException.*;
 
 
 public class Options extends JFrame implements ActionListener  {
-	JButton add;
-	JButton update;
-	JButton view;
-	JButton delete;
-	JButton exit;
+	JButton add,update,view,delete,exit;
+	
 	Options(){
+		getContentPane().setBackground(Color.MAGENTA);
+		setLayout(null);
+		
 		JLabel heading = new JLabel("CONTACTS");
 		heading.setBounds(270,20,300,60);
 		heading.setFont(new Font("Monotype Corsiva",Font.BOLD,50));
@@ -60,8 +60,6 @@ public class Options extends JFrame implements ActionListener  {
 		exit.addActionListener(this);
 		add(exit);
 		
-		getContentPane().setBackground(Color.MAGENTA);
-		setLayout(null);
 		setSize(800,600);
 		setLocation(380, 120);
 		setVisible(true);
@@ -82,7 +80,7 @@ public class Options extends JFrame implements ActionListener  {
 			this.setVisible(false);
 			/*try {
 				//new Update();
-			}catch(Exception ie) {
+			}catch(Exception ioe) {
 				ioe.printStackTrace();
 			}*/
 		}
@@ -90,7 +88,7 @@ public class Options extends JFrame implements ActionListener  {
 			this.setVisible(false);
 			/*try {
 				
-			}catch(Exception ie) {
+			}catch(Exception ioe) {
 				ioe.printStackTrace();
 			}*/
 		}
@@ -99,7 +97,7 @@ public class Options extends JFrame implements ActionListener  {
 			try {
 				new Delete();
 			}catch(Exception ie) {
-				ioe.printStackTrace();
+				ie.printStackTrace();
 			}
 		}
 		else {
