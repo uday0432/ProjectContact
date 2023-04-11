@@ -1,75 +1,118 @@
 package contact;
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.IOException.*;
+
 
 public class Options extends JFrame implements ActionListener  {
 	JButton add;
 	JButton update;
 	JButton view;
 	JButton delete;
+	JButton exit;
 	Options(){
 		JLabel heading = new JLabel("CONTACTS");
-		setLayout(null);
-		
-		heading.setBounds(50,50,300,50);
-		heading.setFont(new Font("Cooper",Font.BOLD,26));
+		heading.setBounds(270,20,300,60);
+		heading.setFont(new Font("Monotype Corsiva",Font.BOLD,50));
 		heading.setForeground(Color.BLUE);
 		add(heading);
 		
+		Font buttonfont = new Font("West Java",Font.BOLD,24);
+		
 		add = new JButton("Add Contact");
-		add.setBounds(50,100,120,30);
-		add.setBackground(Color.WHITE);
-		add.setForeground(Color.BLACK);
+		add.setBounds(250,100,300,60);
+		add.setFont(buttonfont);
+		add.setBackground(Color.ORANGE);
+		add.setForeground(Color.WHITE);
 		add.addActionListener(this);
 		add(add);
 		
 		update = new JButton("Update Contact");
-		
-		update.setBounds(50,150,120,30);
+		update.setBounds(250,180,300,60);
+		update.setFont(buttonfont);
+		update.setBackground(Color.ORANGE);
+		update.setForeground(Color.WHITE);	
 		update.addActionListener(this);
 		add(update);
 		
 		view = new JButton("View Contact");
-		view.setBounds(50,200,120,30);
+		view.setBounds(250,260,300,60);
+		view.setFont(buttonfont);
+		view.setBackground(Color.ORANGE);
+		view.setForeground(Color.WHITE);
 		view.addActionListener(this);
 		add(view);
 		
 		delete = new JButton("Delete Contact"); 
-		delete.setBounds(50,250,120,30);
+		delete.setBounds(250,340,300,60);
+		delete.setFont(buttonfont);
+		delete.setBackground(Color.ORANGE);
+		delete.setForeground(Color.WHITE);
 		delete.addActionListener(this);
 		add(delete);
 		
-		getContentPane().setBackground(Color.WHITE);
-		//setLayout(null);
-		setSize(1100,600);
-		setLocation(200, 120);
+		exit = new JButton("Exit");
+		exit.setBounds(300,450,180,40);
+		exit.setFont(buttonfont);
+		exit.setBackground(Color.ORANGE);
+		exit.setForeground(Color.WHITE);
+		exit.addActionListener(this);
+		add(exit);
+		
+		getContentPane().setBackground(Color.MAGENTA);
+		setLayout(null);
+		setSize(800,600);
+		setLocation(380, 120);
 		setVisible(true);
 		
 	}
 	public void actionPerformed(ActionEvent ae) {
-
+		//setVisible(false);
 		if (ae.getSource()== add) {
+			this.setVisible(false);
 			try {
-				this.setVisible(false);
 				new Add();
-			}catch(Exception e) {
-				e.printStackTrace();
+				this.setVisible(false);
+			}catch(Exception ioe) {
+				ioe.printStackTrace();
 			}
 		}
-		if (ae.getSource()== update) {
+		else if (ae.getSource()== update) {
 			this.setVisible(false);
-			//Update Class Constructor
+			/*try {
+				//new Update();
+			}catch(Exception ie) {
+				ioe.printStackTrace();
+			}*/
 		}
-		if (ae.getSource()== view) {
+		else if (ae.getSource()== view) {
 			this.setVisible(false);
-			//View Class Constructor
+			/*try {
+				
+			}catch(Exception ie) {
+				ioe.printStackTrace();
+			}*/
 		}
-		if (ae.getSource()== delete) {
+		else if (ae.getSource()== delete) {
 			this.setVisible(false);
-			new Delete();
+			/*try {
+			
+			}catch(Exception ie) {
+				ioe.printStackTrace();
+			}*/
 		}
+		else {
+			setVisible(false);
+			try {
+				new Login();
+				this.setVisible(false);
+			}catch(Exception ioe) {
+				ioe.printStackTrace();
+			}
+		}
+		
+			
 		}
 	public static void main(String[] args) {
 		new Options();
