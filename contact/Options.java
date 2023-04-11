@@ -96,11 +96,11 @@ public class Options extends JFrame implements ActionListener  {
 		}
 		else if (ae.getSource()== delete) {
 			this.setVisible(false);
-			/*try {
-			
+			try {
+				new Delete();
 			}catch(Exception ie) {
 				ioe.printStackTrace();
-			}*/
+			}
 		}
 		else {
 			setVisible(false);
