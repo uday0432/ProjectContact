@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class View extends JFrame {
 	View(){
-		System.out.println("bando");
+		System.out.println("Uday Ra bando");
 	}
 	public static void main(String[] args) {
 		new View();
