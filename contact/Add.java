@@ -78,11 +78,12 @@ public class Add extends JFrame implements ActionListener{
 				//System.out.println(number1);
 				try {
 					new FileCreate();
+					//new CreateExcel();
 					JOptionPane.showMessageDialog(null,"Successfully Submitted");
 					username.setText("");
 					number.setText("");
 					//this.setVisible(false);
-				} catch(IOException ioe) {
+				} catch(Exception ioe) {
 					ioe.printStackTrace();
 				}
 			}

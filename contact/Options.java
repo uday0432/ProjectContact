@@ -85,12 +85,12 @@ public class Options extends JFrame implements ActionListener  {
 			}*/
 		}
 		else if (ae.getSource()== view) {
-			this.setVisible(false);
-			/*try {
-				
+			//this.setVisible(false);
+			try {
+				new View();
 			}catch(Exception ioe) {
 				ioe.printStackTrace();
-			}*/
+			}
 		}
 		else if (ae.getSource()== delete) {
 			this.setVisible(false);

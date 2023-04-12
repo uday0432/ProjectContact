@@ -7,7 +7,7 @@ public class Login extends JFrame implements ActionListener{
 	JButton Login;
 	JButton exit;
 	JTextField username;
-	JTextField passw;
+	JPasswordField passw;
 	Login(){
 		
 		JLabel heading=new JLabel("ACCOUNT_LOGIN");
@@ -34,7 +34,7 @@ public class Login extends JFrame implements ActionListener{
 		password.setForeground(Color.WHITE);
 		add(password);
 		
-		passw=new JTextField();
+		passw=new JPasswordField();
 		passw.setBounds(30,300,400,30);
 		passw.setBorder(null);
 		add(passw);
@@ -64,16 +64,15 @@ public class Login extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent ae) {
 		if(ae.getSource()==Login) {
 			String user=username.getText();
-			String pas=passw.getText();
+			char[] pas=passw.getPassword();
 			String u=new String("Rakesh");
 			String p=new String("123456");
-			if(user.equals(u) && pas.equals(p)) {
+			if(user.equals(u) && new String(pas).equals(p)) {
 				//new Contact(user,pas);
 				new Options();
 				setVisible(false);
 			}
 			else {
-				//new Wrong();
 				JOptionPane.showMessageDialog(null,"Wrong Credentials");
 				setVisible(true);
 			}
