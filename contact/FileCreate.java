@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileCreate {
-	static String filename = new String("Details.txt");
+	static String filename = "Details.txt";
 		public FileCreate() throws IOException	{
 			//System.out.println(Add.name1 + Add.number1);
 			FileWriter myfile = new FileWriter(filename,true);

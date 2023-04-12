@@ -1,16 +1,29 @@
 package contact;
-//import java.awt.event.*;
-//import java.awt.*;
-import javax.swing.*;
+import java.io.*;
 
-public class View extends JFrame {
-	View(){
-		System.out.println("Uday Ra bando and subham ro gandi");
+import javax.swing.JOptionPane;
+
+
+
+public class View {
+	public View() throws IOException{
+			File file = new File(FileCreate.filename);
+			
+			if(file.exists()) {
+				ProcessBuilder pb = new ProcessBuilder("Notepad.exe", FileCreate.filename);
+				pb.start();
+				//file.destroy();
+		}
+			else {
+				JOptionPane.showMessageDialog(null,"File Doesnot Exist!");
+			}
+		
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		new View();
+		
 	}
-	
-	}
+}
+
 
 
