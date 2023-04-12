@@ -4,6 +4,12 @@ package contact;
 import javax.swing.*;
 
 public class View extends JFrame {
+	View(){
+		System.out.println("bando");
+	}
+	public static void main(String[] args) {
+		new View();
+	}
 	
 	}
 
