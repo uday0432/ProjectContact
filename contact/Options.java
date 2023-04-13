@@ -26,6 +26,7 @@ public class Options extends JFrame implements ActionListener  {
 		add.setBackground(Color.ORANGE);
 		add.setForeground(Color.WHITE);
 		add.addActionListener(this);
+		add.setFocusable(false);
 		add(add);
 		
 		update = new JButton("Update Contact");
@@ -34,6 +35,7 @@ public class Options extends JFrame implements ActionListener  {
 		update.setBackground(Color.ORANGE);
 		update.setForeground(Color.WHITE);	
 		update.addActionListener(this);
+		update.setFocusable(false);
 		add(update);
 		
 		view = new JButton("View Contact");
@@ -41,6 +43,7 @@ public class Options extends JFrame implements ActionListener  {
 		view.setFont(buttonfont);
 		view.setBackground(Color.ORANGE);
 		view.setForeground(Color.WHITE);
+		view.setFocusable(false);
 		view.addActionListener(this);
 		add(view);
 		
@@ -50,6 +53,7 @@ public class Options extends JFrame implements ActionListener  {
 		delete.setBackground(Color.ORANGE);
 		delete.setForeground(Color.WHITE);
 		delete.addActionListener(this);
+		delete.setFocusable(false);
 		add(delete);
 		
 		exit = new JButton("Exit");
@@ -58,6 +62,7 @@ public class Options extends JFrame implements ActionListener  {
 		exit.setBackground(Color.ORANGE);
 		exit.setForeground(Color.WHITE);
 		exit.addActionListener(this);
+		exit.setFocusable(false);
 		add(exit);
 		
 		setSize(800,600);
