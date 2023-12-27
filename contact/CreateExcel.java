@@ -29,17 +29,16 @@ public class CreateExcel {
 			workbook = Workbook.createWorkbook(new File(excelname));
 			sheet = workbook.createSheet("Sheet 1",0);// Sheet Created
 			
-			
-			
 			workbook.write();
 			workbook.close();
+			
 		} catch(IOException ioe) {
 			ioe.printStackTrace();
 		}
 	}
 	
 	public static void main(String[] args) throws ClassNotFoundException, RowsExceededException, WriteException{
-		new CreateExcel() ;
+		new CreateExcel();
 	}
 
 }
